@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base colors */
+  --background: hsl(210, 20%, 98%);
+  --foreground: hsl(215, 25%, 12%);
+  --muted: hsl(210, 40%, 95%);
+  --muted-foreground: hsl(215, 16%, 46%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(215, 25%, 12%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(215, 25%, 12%);
+  --border: hsl(215, 12%, 92%);
+  --input: hsl(215, 12%, 92%);
+  --primary: hsl(238, 76%, 60%);
+  --primary-foreground: hsl(213, 100%, 99%);
+  --secondary: hsl(210, 40%, 95%);
+  --secondary-foreground: hsl(215, 16%, 25%);
+  --accent: hsl(210, 40%, 95%);
+  --accent-foreground: hsl(215, 16%, 25%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(215, 25%, 12%);
+  --radius: 0.75rem;
+  
+  /* Chart colors */
+  --chart-1: hsl(238, 76%, 60%);
+  --chart-2: hsl(340, 75%, 55%);
+  --chart-3: hsl(198, 93%, 60%);
+  --chart-4: hsl(45, 93%, 58%);
+  --chart-5: hsl(142, 76%, 36%);
+  
+  /* Emotion colors */
+  --emotion-angry: hsl(0, 84%, 60%);
+  --emotion-sad: hsl(214, 84%, 56%);
+  --emotion-neutral: hsl(218, 11%, 65%);
+  --emotion-happy: hsl(142, 76%, 36%);
+  --emotion-excited: hsl(45, 93%, 58%);
+  --emotion-love: hsl(340, 75%, 55%);
+  --emotion-anxious: hsl(262, 83%, 58%);
+  --emotion-calm: hsl(198, 93%, 60%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 4%, 16%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 4%, 16%);
+  --input: hsl(240, 4%, 16%);
+  --primary: hsl(238, 76%, 60%);
+  --primary-foreground: hsl(213, 100%, 99%);
+  --secondary: hsl(240, 4%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 4%, 16%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 5%, 84%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .emotion-btn {
+    @apply transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+  
+  .emotion-btn.selected {
+    @apply ring-2 ring-offset-2;
+  }
+  
+  .emotion-angry.selected {
+    @apply ring-red-500 border-red-500 bg-red-50;
+  }
+  
+  .emotion-sad.selected {
+    @apply ring-blue-500 border-blue-500 bg-blue-50;
+  }
+  
+  .emotion-neutral.selected {
+    @apply ring-gray-500 border-gray-500 bg-gray-50;
+  }
+  
+  .emotion-happy.selected {
+    @apply ring-green-500 border-green-500 bg-green-50;
+  }
+  
+  .emotion-excited.selected {
+    @apply ring-yellow-500 border-yellow-500 bg-yellow-50;
+  }
+  
+  .emotion-love.selected {
+    @apply ring-pink-500 border-pink-500 bg-pink-50;
+  }
+  
+  .emotion-anxious.selected {
+    @apply ring-purple-500 border-purple-500 bg-purple-50;
+  }
+  
+  .emotion-calm.selected {
+    @apply ring-cyan-500 border-cyan-500 bg-cyan-50;
+  }
+  
+  .breathing-circle {
+    @apply rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 opacity-70;
+    transition: transform 4s ease-in-out;
+  }
+  
+  .breathing-circle.inhale {
+    transform: scale(1.3);
+  }
+  
+  .breathing-circle.exhale {
+    transform: scale(0.8);
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

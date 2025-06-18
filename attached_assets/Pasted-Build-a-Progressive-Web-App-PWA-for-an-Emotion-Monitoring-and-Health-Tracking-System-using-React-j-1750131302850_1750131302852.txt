@@ -1,0 +1,124 @@
+Build a Progressive Web App (PWA) for an Emotion Monitoring and Health Tracking System using React.js (or Next.js).
+
+The app must provide advanced emotion logging, support health data correlation, and offer an interface to connect with Wear OS smartwatches via Google Fit APIs, Health Connect, or an Android companion app.
+
+This is a PWA-first approach, optimized for desktop and mobile browsers, with API bridges to wearable platforms (not a wearable-native app).
+
+✅ Core Features
+🧠 1. Advanced Emotion Logging
+Predefined emotions with:
+
+Emoji
+
+Color tags
+
+Mood intensity slider (1–10)
+
+User can:
+
+Add free-text thoughts
+
+Attach current location (optional)
+
+Upload a selfie (mood journal entry)
+
+Tag activity (e.g. "working", "eating", "socializing")
+
+Timestamp auto-generated for every entry
+
+📊 2. Mood Analytics & Dashboard
+Graphs:
+
+Mood trend over time (line chart)
+
+Emotion frequency (bar chart)
+
+Emotion vs heart rate/sleep correlation
+
+Filters:
+
+Time period (today/week/month)
+
+Specific emotions or activities
+
+🧘 3. Breathing & Relaxation Tools
+Guided breathing with animation and timer
+
+Calming sounds or music suggestions (Spotify embed or local MP3)
+
+Displayed automatically when bad mood detected
+
+🔔 4. Smart Reminders
+Customizable notifications to:
+
+Log emotions (daily or twice daily)
+
+Suggest breathing exercise after stress is detected
+
+Use Web Push API
+
+🔗 5. Integration with Wearable OS (Wear OS)
+While PWAs can’t run on Wear OS, they can fetch wearable data using a connected phone.
+
+✅ Must Support:
+Google Fit REST API (via OAuth) to fetch:
+
+Heart rate
+
+Sleep
+
+Step count
+
+Optional: Build a minimal Android companion app that syncs data from Health Connect to the PWA's backend
+
+📁 Project Structure
+pgsql
+Copy
+Edit
+emotion-pwa/
+├── public/
+│   ├── manifest.json
+│   └── icons/
+├── src/
+│   ├── components/
+│   │   ├── EmotionLogger.js
+│   │   ├── MoodTimeline.js
+│   │   ├── HealthSync.js
+│   │   ├── BreathingTool.js
+│   │   └── Dashboard.js
+│   ├── utils/
+│   │   ├── googleFitApi.js
+│   │   └── healthConnectBridge.js
+│   ├── App.js
+│   ├── service-worker.js
+│   └── index.js
+🧱 Tech Stack & Tools
+React.js (or Next.js)
+
+Tailwind CSS / Material UI for design
+
+Chart.js / Recharts for visualizations
+
+Firebase / Supabase (optional, for user auth & syncing)
+
+Web Push API
+
+Google Fit API (OAuth2)
+
+PWA assets: manifest.json, service-worker.js, installability banner
+
+🛠️ Testing & Deployment
+Run on Replit or Vercel
+
+Test installability (PWA)
+
+Test Google Fit OAuth on mobile (must serve over HTTPS)
+
+Companion Android app can push health data to a backend the PWA reads from
+
+🧠 Bonus Features (Optional)
+AI chatbot to reflect on mood patterns
+
+Generate daily/weekly summaries with mood insights
+
+Export data as .csv or .pdf
